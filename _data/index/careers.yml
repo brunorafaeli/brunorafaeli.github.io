@@ -4,7 +4,10 @@
     detail: TGR - Tecnologia em Gestão de Redes
     i18n: company_a
   desc:
-    detail: I worked at Company A ...
+    detail: TGR was a great personal experience to live a Startup`s lifestyle. 
+            I learned a lot of different languages and frameworks, 
+            about data analzys and agile software development (scrum). 
+            Highlights for my projects using Django and Elastic Stack.
     i18n: company_a_desc
   date:
     detail: Apr. 2016 - Now
@@ -18,7 +21,10 @@
     detail: FGV - IBRE
     i18n: company_b
   desc:
-    detail: I worked at Company B ...
+    detail: I worked in the development of "Brazilian Economic Uncertainty Index".
+            I developed a Web Crawler using R language and Selenium framework. This crawler
+            was used to collect news in the main Brazil`s newspapers, tweets on Twitter and posts on Facebook.
+            Also, i worked creating dashboards using R Shiny and analyzing data.
     i18n: company_b_desc
   date:
     detail: Sep. 2015 - Apr. 2016
@@ -32,7 +38,9 @@
     detail: LAND - COPPE/UFRJ
     i18n: company_b
   desc:
-    detail: I worked at Company B ...
+    detail: As a undergraduate researcher I worked as an PhD assistant in several research projects. Highlights for
+            Gaspare`s research (owner of Google Research Awards Latin America) - "Measuring Engagement of Students in Online Videos Lectures".
+
     i18n: company_b_desc
   date:
     detail: Aug. 2012 - Apr. 2016
