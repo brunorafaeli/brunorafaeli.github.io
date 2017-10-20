@@ -186,6 +186,10 @@ h3, h4, h5 {
   background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.my_name {
+  color: #fff;
+}
+
 body {
   &.fixed-nav #wrapper #page-wrapper {
     margin-top: 60px;
@@ -262,7 +266,9 @@ body.canvas-menu .nav-header {
 }
 
 .top-navigation .navbar-brand {
-  background: #3385FF;
+  background: #4b6cb7;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   color: #fff;
   padding: 15px 25px;
 }
@@ -2631,6 +2637,13 @@ body {
     background: #f4f4f4;
     margin-top: 60px;
   }
+  .gradient-section {
+    background: #4b6cb7;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #182848, #4b6cb7);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #182848, #4b6cb7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    margin-top: 60px;
+  }
   .team-member {
     text-align: center;
     img {
@@ -2640,15 +2653,48 @@ body {
   .social-icon a {
     background: #3385FF;
     color: #fff;
-    padding: 4px 8px;
-    height: 28px;
-    width: 28px;
+    padding: 6px 10px;
+    height: 32px;
+    width: 32px;
     display: block;
-    border-radius: 50px;
+    border-radius: 52px;
     &:hover {
       background: #3385FF;
     }
   }
+
+  .links-container {
+    margin: 30px auto 10px auto;
+    max-width: 65vw;
+  }
+  .link {
+    font-size: 24px;
+    font-weight: 300;
+    max-width: 200px;
+    margin: 0 10px 20px 10px;
+    padding: 15px;
+    display: inline-block;
+    color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 20px;
+    border-color: rgba(0, 0, 0, 0.28);
+    cursor: pointer;
+    transition: background-color 0.1s ease, border-color 0.1s ease, color 0.1s ease;
+    user-select: none;
+    text-decoration: none;
+  }
+  .link:hover {
+    border-color: #dedede;
+    background: rgba(0, 0, 0, 0.28);
+    color: #dedede;
+    /*font-weight: 400;*/
+  }
+  .link:active {
+  transform: translateY(2px);
+  }
+
+
   .img-small {
     height: 88px;
     width: 88px;
