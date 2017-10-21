@@ -9,7 +9,7 @@
         <!-- avatar -->
         <div class="col-md-12">
             <div class="team-member wow zoomIn">
-                <img src="{{ site.author.avatar | prepend: site.baseurl }}" height="300" width="300" class="img-responsive" alt="">
+                <img src="{{ site.author.avatar | prepend: site.baseurl }}" height="300" width="300" class="img-responsive img-circle" alt="">
                 <br>
 <!--                 <ul class="list-inline social-icon">
                     {% if site.author.github_username %}
@@ -42,7 +42,10 @@
                   <a href="https://www.facebook.com/{{ site.author.facebook_username }}" target="_blank" rel="noopener" class="link">
                     FACEBOOK
                   </a>
-                  <a href="{{ email }}" target="_blank" rel="noopener" class="link">
+                  <a href="https://speakerdeck.com/brunorafaeli" target="_blank" rel="noopener" class="link">
+                    PRESENTATIONS
+                  </a>
+                  <a href="mailto:{{ site.author.email }}" rel="noopener" class="link">
                     EMAIL
                   </a>
                 </div>
