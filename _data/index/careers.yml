@@ -4,13 +4,16 @@
     detail: TGR - Tecnologia em Gestão de Redes
     i18n: company_a
   desc:
-    detail: TGR was a great personal experience to live the Startup`s lifestyle. 
-            I learned a lot of different programming languages and frameworks, 
-            about data analzys and agile software development (scrum). 
-            Highlights for my projects using Django and Elastic Stack.
+    detail: TGR was a great personal experience to live the Startup`s lifestyle. I learned a lot about best coding practices, about data analysis and agile software development (Scrum, Kanban). 
+
+            My main role was to work as a FullStack developer in a system to manage probes (made in Django), creating features, tests and making the software maintenance. Also, I developed a REST API to allow users to access data from this system and an Authentication tool using NGINX.
+
+            I also worked, in the refactoring of an ETL tool, made in NodeJS and MongoDB and using later using Scala + Apache Spark. 
+
+            Moreover I contributed to the development of a dashboard about network data, using Elasticsearch and Kibana
     i18n: company_a_desc
   date:
-    detail: Apr. 2016 - Now
+    detail: Apr. 2016 - Nov. 2017
     i18n: company_a_date
   job:
     detail: Software Engineering Intern
@@ -21,10 +24,7 @@
     detail: FGV - IBRE
     i18n: company_b
   desc:
-    detail: I worked in the development of "Brazilian Economic Uncertainty Index".
-            I developed a Web Crawler using R language and Selenium framework. This crawler
-            was used to collect news in the main Brazil`s newspapers, tweets on Twitter and posts on Facebook.
-            Also, i worked creating dashboards using R Shiny and analyzing data.
+    detail: I worked on the development of "Brazilian Economic Uncertainty Index". I developed a Web Crawler using R language and Selenium framework. This crawler was used to collect news in the main Brazilian`s newspapers, tweets on Twitter and posts on Facebook. I  also worked creating dashboards using R Shiny and analyzing data.
     i18n: company_b_desc
   date:
     detail: Sep. 2015 - Apr. 2016
@@ -38,9 +38,7 @@
     detail: LAND - COPPE/UFRJ
     i18n: company_b
   desc:
-    detail: As a undergraduate researcher I worked as an PhD assistant in several research projects. Highlights for
-            Gaspare`s research (owner of Google Research Awards Latin America) - "Measuring Engagement of Students in Online Videos Lectures".
-
+    detail: As an undergraduate researcher, I participated as a Ph.D. assistant in several research projects. First, I worked analyzing a dataset of a famous video streaming service, using R and statistical packages. Later, my main project was the Gaspare Bruno's research (winner of Google Research Awards Latin America) in his doctorate thesis and in my undergraduate thesis - "Measuring Engagement of Students in Online Videos Lectures". In this project, I worked with logs of an EaD system and with sensors like EEG, EDA and pupil sensor. I used Python and tools like Matplotlib, NumPy, and ScyPy.
     i18n: company_b_desc
   date:
     detail: Aug. 2012 - Apr. 2016
