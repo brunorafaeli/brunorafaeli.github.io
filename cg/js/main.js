@@ -193,6 +193,11 @@ function mousePressed() {
 
     var intersect = rayCasting();
     P1 = getArcballVector();
+
+    alfa = 0.002 * group.position.z**2 +  0.7 * group.position.z + 38;
+    if(alfa < 0){
+        alfa = 3;
+    }
 }
 
 function mouseDragged() {
@@ -255,8 +260,6 @@ function mouseWheel(delta){
     else{
         group.position.z += -1;
     }
-
-    alfa = 0.002 * group.position.z**2 +  0.7 * group.position.z + 38
 
 }
 function getArcballVector(){
@@ -499,6 +502,9 @@ window.onload = function() {
   }
 
   modal.style.display = "block";
+
+  document.getElementById("my_audio").play();
+
 
 };
 
