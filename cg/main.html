@@ -1,0 +1,69 @@
+<!-- <!DOCTYPE html> -->
+<html>
+    <head>
+        <meta charset=utf-8>
+        <title>Terceiro Trabalho - Bruno Rafaeli</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap.css"> -->
+    </head>
+    <body oncontextmenu="return false;">
+        <div id="canvas" style="height:600;"> </div>
+        <br>
+        <div style="width:1200px; height:40; margin:0 auto;">
+            <div id="slidecontainer">
+                <div id="dots"></div>
+              <input type="range" min="0" max="100" value="0" class="slider" id="myRange">
+            </div>
+            <div class="steps-2">
+                <span class="tick" style="left: 1%;">0</span>
+                <span class="tick" style="left: 10%;">10</span>
+                <span class="tick" style="left: 20%;">20</span>
+                <span class="tick" style="left: 30%;">30</span>
+                <span class="tick" style="left: 40%;">40</span>
+                <span class="tick" style="left: 50%;">50</span>
+                <span class="tick" style="left: 60%;">60</span>
+                <span class="tick" style="left: 70%;">70</span>
+                <span class="tick" style="left: 80%;">80</span>
+                <span class="tick" style="left: 90%;">90</span>
+                <span class="tick" style="left: 100%;">100</span>
+            </div>
+        </div>
+
+        <div id="myModal" class="modal fade" id="tab_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content panel-primary">
+              <div class="modal-header panel-heading">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Bem vindo!</h4>
+              </div>
+              <div class="modal-body">
+                <h5><strong>Tutorial de uso da ferramenta : </strong></h5>
+
+                Nesse trabalho você poderá controlar o seu objeto, através da rotação e translação do mesmo. Sempre que quiser, podera marcar nos círculos da barra inferior um keyframe. Esse keyframe será usado para fazer a interpolação da cena e criar uma animação.
+
+                <ul>
+                  <hr>
+                  <li><strong>Operation - </strong> Escolha entre rotação e translação (Você também pode mudar de um modo para outro através da tecla <b>Space</b></li>
+                  <hr>
+                  <li><strong>Animate - </strong> Se ativada, irá animar a cena de acordo com os keyframes</li>
+                  <hr>
+                  <li><strong>Speed - </strong>Controla a velocidade da animação</li>
+                </ul>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary"  data-dismiss="modal">Começar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/three.js"></script>
+        <script src="js/dat.gui.min.js"></script>
+        <script src="js/loaders/DDSLoader.js"></script>
+        <script src="js/loaders/MTLLoader.js"></script>
+        <script src="js/loaders/OBJLoader.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
