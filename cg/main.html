@@ -4,7 +4,6 @@
         <meta charset=utf-8>
         <title>Terceiro Trabalho - Bruno Rafaeli</title>
         <link rel="stylesheet" type="text/css" href="./css/style.css">
-        <!-- <link rel="stylesheet" type="text/css" href="./css/bootstrap.css"> -->
     </head>
     <body oncontextmenu="return false;">
         <div id="canvas" style="height:600;"> </div>
@@ -29,18 +28,18 @@
             </div>
         </div>
 
-        <div id="myModal" class="modal fade" id="tab_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-lg">
-            <div class="modal-content panel-primary">
-              <div class="modal-header panel-heading">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Bem vindo!</h4>
-              </div>
-              <div class="modal-body">
-                <h5><strong>Tutorial de uso da ferramenta : </strong></h5>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
 
+          <!-- Modal content -->
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">&times;</span>
+            <h2><strong>Tutorial de uso da ferramenta : </strong></h2>
+            </div>
+            <div class="modal-body">
+                <br>
                 Nesse trabalho você poderá controlar o seu objeto, através da rotação e translação do mesmo. Sempre que quiser, podera marcar nos círculos da barra inferior um keyframe. Esse keyframe será usado para fazer a interpolação da cena e criar uma animação.
-
                 <ul>
                   <hr>
                   <li><strong>Operation - </strong> Escolha entre rotação e translação (Você também pode mudar de um modo para outro através da tecla <b>Space</b></li>
@@ -49,16 +48,12 @@
                   <hr>
                   <li><strong>Speed - </strong>Controla a velocidade da animação</li>
                 </ul>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-primary"  data-dismiss="modal">Começar</button>
-              </div>
             </div>
           </div>
+
         </div>
 
         <script src="js/jquery.js"></script>
-        <script src="js/bootstrap.js"></script>
         <script src="js/three.js"></script>
         <script src="js/dat.gui.min.js"></script>
         <script src="js/loaders/DDSLoader.js"></script>
