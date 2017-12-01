@@ -11,8 +11,9 @@ var windowHalfY = 1000 / 2;
 var P1 = new THREE.Vector3(); 
 var P2 = new THREE.Vector3();
 
-var raycaster;
-var mouse = new THREE.Vector2(0,0);
+// var raycaster;
+var intersect;
+var mouse = new THREE.Vector3(0,0,0);
 var mouseXBf, mouseYBf;
 
 var alfa = 30
@@ -133,7 +134,7 @@ function init() {
     // If a setup function is defined, call it
     if (typeof setup !== 'undefined') setup();
 
-    raycaster = new THREE.Raycaster();
+    // raycaster = new THREE.Raycaster();
 
     //This will add a starfield to the background of a scene
     var starsGeometry = new THREE.Geometry();
@@ -168,7 +169,6 @@ function onWindowResize() {
     renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
-// shim layer with setTimeout fallback
 window.requestAnimFrame = (function(){
     return  window.requestAnimationFrame ||
     window.webkitRequestAnimationFrame ||
@@ -191,7 +191,7 @@ function mousePressed() {
     mouseXBf = mouseX;
     mouseYBf = mouseY;
 
-    var intersect = rayCasting();
+    // intersect = rayCasting();
     P1 = getArcballVector();
 
     alfa = 0.002 * group.position.z**2 +  0.7 * group.position.z + 38;
@@ -222,7 +222,7 @@ function mouseDragged() {
         return;
     }
 
-    else{
+    if(operationValue === 0){
 
         P2 = getArcballVector();
 
@@ -243,6 +243,7 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
+    // intersect = rayCasting();
 }
 
 function mouseMoved() {
@@ -290,6 +291,7 @@ function rayCasting(){
 
     mouse.x = ( mouseX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( mouseY / window.innerHeight ) * 2 + 1;
+    mouse.z = 0.5
 
     // update the picking ray with the camera and mouse position
     raycaster.setFromCamera( mouse, camera );
@@ -373,18 +375,18 @@ function dotClicked(e) {
         dotsPosition[id] = pos.copy(group.position);
     }
 
-    dotsIndex.sort();
+    dotsIndex.sort(function(a, b){return a-b})
 }
 
 var oldSliderValue = 0;
 var slider = document.getElementById("myRange");
 slider.oninput = function() {
-    animateObject();
+    animateObject(slider.value);
 }
 
-function animateObject() {
+function animateObject(sliValue) {
 
-    var newSliderValue = parseInt(slider.value);
+    var newSliderValue = parseInt(sliValue);
     var nextIndex = -1;
 
     if(dotsIndex.length > 0){
@@ -398,15 +400,15 @@ function animateObject() {
             }
             if(nextIndex === -1)
             {
-                nextIndex = dotsIndex[0]
-                var circles = 100 - newSliderValue + nextIndex;
+                var fixIndex = dotsIndex[0]
+                // var circles = 100 - newSliderValue + nextIndex;
             }
             else{
                 var circles = nextIndex - newSliderValue;
             }
         }
         else{
-            for(var i = 0; i < dotsIndex.length; i++){
+            for(var i = dotsIndex.length; i >= 0; i--){
               if(dotsIndex[i] < newSliderValue){
                   var nextIndex = dotsIndex[i];
                   break;
@@ -414,32 +416,42 @@ function animateObject() {
           }
           if(nextIndex === -1)
           {
-              nextIndex = dotsIndex[dotsIndex.length - 1]
-              var circles = newSliderValue + 100 - nextIndex;
+              // nextIndex = dotsIndex[dotsIndex.length - 1]
+              // var circles = newSliderValue + 100 - nextIndex;
           }
           else{
               var circles = newSliderValue - nextIndex;
           }
-      }
-  }
+        }
+    }
 
-  if(nextIndex != -1 && newSliderValue != oldSliderValue){
+    if(nextIndex != -1 && newSliderValue != oldSliderValue){
+        var nextQuat = dotsQuaternion[nextIndex];
+        var nextPos = dotsPosition[nextIndex];
 
-    var nextQuat = dotsQuaternion[nextIndex];
-    var nextPos = dotsPosition[nextIndex];
+        if(circles === 0){
+            var t = 1
+        }
+        else{
+            var t = 1/circles;
+        }
 
-    if(circles === 0){
-        var t = 1
+        group.quaternion.slerp(nextQuat, t);
+        group.position.lerp(nextPos, t)
     }
     else{
-        var t = 1/circles;
+        if(animateValue){
+            var nextQuat = dotsQuaternion[fixIndex];
+            var nextPos = dotsPosition[fixIndex];
+
+            group.quaternion.slerp(nextQuat, 1);
+            group.position.lerp(nextPos, 1)
+
+            slider.value = fixIndex.toString();
+            }
     }
 
-    group.quaternion.slerp(nextQuat, t);
-    group.position.lerp(nextPos, t)
-}
-
-oldSliderValue = newSliderValue;
+    oldSliderValue = newSliderValue;
 
 }
 
@@ -461,7 +473,7 @@ window.onload = function() {
             else{
                 slider.value = (sliderValue + 1).toString();
             }
-            animateObject();
+            animateObject(slider.value);
         }, speedValue);
     }
     else{
